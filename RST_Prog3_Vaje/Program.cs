@@ -51,6 +51,24 @@ namespace RST_Prog3_Vaje
                         }
                     }
                     break;
+
+                case Tutorial.Tutorial_03:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_03.Exercises>())
+                        {
+                            case Tutorials_03.Exercises.Exercise_621:
+                                {
+                                    Tutorials_03.Exercise_621();
+                                }
+                                break;
+                            case Tutorials_03.Exercises.Exercise_624:
+                                {
+                                    Tutorials_03.Exercise_624();
+                                }
+                                break;
+                        }
+                    }
+                    break;
             }            
         }
     }
