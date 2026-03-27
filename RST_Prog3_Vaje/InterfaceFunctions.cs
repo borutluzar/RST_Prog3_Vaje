@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RST2_Programiranje_Vaje_25_26
+namespace RST_Prog3_Vaje
 {
     public static class InterfaceFunctions
     {

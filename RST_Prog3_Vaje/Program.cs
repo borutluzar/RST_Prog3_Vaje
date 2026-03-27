@@ -1,7 +1,4 @@
-﻿using RST2_Programiranje_Vaje_25_26;
-using static System.Collections.Specialized.BitVector32;
-
-namespace RST_Prog3_Vaje
+﻿namespace RST_Prog3_Vaje
 {
     internal class Program
     {
