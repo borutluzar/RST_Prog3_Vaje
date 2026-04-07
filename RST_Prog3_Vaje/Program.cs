@@ -66,6 +66,29 @@
                         }
                     }
                     break;
+
+                case Tutorial.Tutorial_04:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_04.Exercises>())
+                        {
+                            case Tutorials_04.Exercises.Exercise_721:
+                                {
+                                    Tutorials_04.Exercise_721();
+                                }
+                                break;
+                            case Tutorials_04.Exercises.Exercise_722:
+                                {
+                                    Tutorials_04.Exercise_722();
+                                }
+                                break;
+                            case Tutorials_04.Exercises.Exercise_725:
+                                {
+                                    Tutorials_04.Exercise_725();
+                                }
+                                break;
+                        }
+                    }
+                    break;
             }            
         }
     }
