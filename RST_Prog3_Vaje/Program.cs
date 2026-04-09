@@ -89,6 +89,19 @@
                         }
                     }
                     break;
+
+                case Tutorial.Tutorial_05:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_05.Exercises>())
+                        {
+                            case Tutorials_05.Exercises.Exercise_921:
+                                {
+                                    Tutorials_05.Exercise_921();
+                                }
+                                break;
+                        }
+                    }
+                    break;
             }            
         }
     }
