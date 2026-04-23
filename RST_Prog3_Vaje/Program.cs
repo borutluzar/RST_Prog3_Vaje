@@ -102,6 +102,12 @@
                         }
                     }
                     break;
+
+                case Tutorial.Tutorial_08:
+                    {
+                        // Naloga WildlifeReserve
+                    }
+                    break;
             }            
         }
     }
