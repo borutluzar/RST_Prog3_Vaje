@@ -5,6 +5,7 @@ using System.Reflection.Metadata;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RST_Prog3_Vaje
@@ -13,12 +14,26 @@ namespace RST_Prog3_Vaje
     {
         public enum Exercises
         {
-            Exercise_823 = 1,
-            Exercise_1421 = 2,
+            Exercise_821 = 1,
+            Exercise_823 = 2,
+            Exercise_1421 = 3,
         }
 
         /// <summary>
-        /// 
+        /// Zapišite razširitveno funkcijo za “lep” izpis elementov seznama.
+        /// </summary>
+        public static void Exercise_821()
+        {
+            List<string> lstNizov = new() { "Marko", "skače", "po", "zeleni", "travi" };
+            Console.WriteLine(lstNizov.ToString<string>());
+
+            List<int> lstStevil = new() { 3, 5, 7, 11, 13, 17, 19 };
+            Console.WriteLine(lstStevil.ToString<int>());
+        }
+
+        /// <summary>
+        /// Zapišite razširitveno funkcijo, ki ugotovi, 
+        /// če je dani niz palindrom ali ne.
         /// </summary>
         public static void Exercise_823()
         {
@@ -29,6 +44,13 @@ namespace RST_Prog3_Vaje
             Console.WriteLine($"Beseda {word2} {(word2.IsPalindrom() ? "je" : "ni")} palindrom!");
         }
 
+        /// <summary>
+        /// Imamo vmesnik IMessage s funkcijo Prepare in razred OrdinaryMessage, ki ga implementira. 
+        /// S pomočjo vzorca decorator pripravite razrede, 
+        /// ki bodo instanco razreda OrdinaryMessage ovili v funkcionalnosti, 
+        /// ki bodo sporočilu dodali: 
+        /// (a) čas pošiljanja, (b) ga šifrirali (npr.obrnili) in (c) vložili v html značke.
+        /// </summary>
         public static void Exercise_1421()
         {
             OrdinaryMessage msg = new OrdinaryMessage();
@@ -49,10 +71,35 @@ namespace RST_Prog3_Vaje
     }
 
 
-    #region Naloga 8.2.3
-    // Razred za razširitveno funkcijo
-    public static class Palindrom
+    #region Nalogi 8.2.1 in 8.2.3
+    // Razred za razširitveni funkciji
+    public static class Extensions
     {
+        /// <summary>
+        /// Generična razširitvena funkcija.
+        /// </summary>
+        public static string ToString<T>(this IEnumerable<T> lst, string separator = ",")
+        {
+            StringBuilder sb = new StringBuilder();
+            // {1, 2, 3}
+            sb.Append("{");
+            bool first = true;
+            foreach (T element in lst)
+            {
+                if (first)
+                {
+                    sb.Append(element);
+                }
+                else
+                {
+                    sb.Append(separator + " " + element);
+                }
+                first = false;
+            }
+            sb.Append("}");
+            return sb.ToString();
+        }
+
         public static bool IsPalindrom(this string word)
         {
             string lowerWord = word.ToLower();
@@ -101,7 +148,7 @@ namespace RST_Prog3_Vaje
 
     public class TimeMessageDecorator : MessageDecorator
     {
-        public TimeMessageDecorator(IMessage message) : base(message)  {  }
+        public TimeMessageDecorator(IMessage message) : base(message) { }
 
         public override string Prepare()
         {
@@ -131,7 +178,7 @@ namespace RST_Prog3_Vaje
 
     public class HTMLMessageDecorator : MessageDecorator
     {
-        public HTMLMessageDecorator(IMessage message) : base(message) {  }
+        public HTMLMessageDecorator(IMessage message) : base(message) { }
 
         public override string Prepare()
         {

@@ -125,6 +125,11 @@
                     {
                         switch (InterfaceFunctions.ChooseOption<Tutorials_09.Exercises>())
                         {
+                            case Tutorials_09.Exercises.Exercise_821:
+                                {
+                                    Tutorials_09.Exercise_821();
+                                }
+                                break;
                             case Tutorials_09.Exercises.Exercise_823:
                                 {
                                     Tutorials_09.Exercise_823();
@@ -133,6 +138,29 @@
                             case Tutorials_09.Exercises.Exercise_1421:
                                 {
                                     Tutorials_09.Exercise_1421();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+
+                case Tutorial.Tutorial_10:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_10.Exercises>())
+                        {
+                            case Tutorials_10.Exercises.Exercise_1521:
+                                {
+                                    Tutorials_10.Exercise_1521();
+                                }
+                                break;
+                            case Tutorials_10.Exercises.Exercise_1522:
+                                {
+                                    Tutorials_10.Exercise_1522();
+                                }
+                                break;
+                            case Tutorials_10.Exercises.Exercise_1523:
+                                {
+                                    Tutorials_10.Exercise_1523();
                                 }
                                 break;
                         }
