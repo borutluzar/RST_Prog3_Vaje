@@ -13,11 +13,11 @@
             Tutorial_07 = 7,  // 13. 4. 2026
             Tutorial_08 = 8,  // 23. 4. 2026
             Tutorial_09 = 9,  //  6. 5. 2026
-            Tutorial_10 = 10, // 13. 5. 2026
-            Tutorial_11 = 11, // 15. 5. 2026
-            Tutorial_12 = 12, // 20. 5. 2026
-            Tutorial_13 = 13, // 21. 5. 2026
-            Tutorial_14 = 14, // 26. 5. 2026
+            Tutorial_10 = 10, // 15. 5. 2026
+            Tutorial_11 = 11, // 20. 5. 2026
+            Tutorial_12 = 12, // 21. 5. 2026
+            Tutorial_13 = 13, // 26. 5. 2026
+            Tutorial_14 = 14, // 27. 5. 2026
             Tutorial_15 = 15, // 28. 5. 2026
         }
 
@@ -103,9 +103,39 @@
                     }
                     break;
 
+                case Tutorial.Tutorial_06:
+                    {
+                        // Izdelava aplikacije FurnitureRepository
+                    }
+                    break;
+
+                case Tutorial.Tutorial_07:
+                    {
+                        // Izdelava aplikacije FurnitureRepository
+                    }
+                    break;
+
                 case Tutorial.Tutorial_08:
                     {
-                        // Naloga WildlifeReserve
+                        // Naloga WildlifeReserve v skupinah
+                    }
+                    break;
+
+                case Tutorial.Tutorial_09:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_09.Exercises>())
+                        {
+                            case Tutorials_09.Exercises.Exercise_823:
+                                {
+                                    Tutorials_09.Exercise_823();
+                                }
+                                break;
+                            case Tutorials_09.Exercises.Exercise_1421:
+                                {
+                                    Tutorials_09.Exercise_1421();
+                                }
+                                break;
+                        }
                     }
                     break;
             }            
