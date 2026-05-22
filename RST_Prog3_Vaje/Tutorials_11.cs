@@ -105,7 +105,27 @@ namespace RST_Prog3_Vaje
         /// </summary>
         public static void Exercise_1633()
         {
-            /* Čakamo Pavlovo kodo... */
+            MotionSensor sensorBathroom = new();
+            MotionSensor sensorKitchen = new();
+            MotionSensor sensorLivingroom = new();
+
+            SmartLight bathroomLight = new();
+            SmartLight kitchenLight = new();
+
+            SecurityCamera securityCamera = new();
+
+            MobileApp mobileApp = new();
+
+
+            sensorBathroom.OnMotionDetected += bathroomLight.TurnOnLights;
+            sensorBathroom.OnMotionDetected += securityCamera.TurnOnCamera;
+            sensorBathroom.OnMotionDetected += mobileApp.SendSMS;
+
+            sensorKitchen.OnMotionDetected += kitchenLight.TurnOnLights;
+            sensorKitchen.OnMotionDetected += securityCamera.TurnOnCamera;
+
+            sensorBathroom.MotionDetected("bathroom", DateTime.Now);
+            sensorKitchen.MotionDetected("kitchen", DateTime.Now);
         }
     }
 
@@ -305,6 +325,45 @@ namespace RST_Prog3_Vaje
 
     #region Naloga 16.3.3
 
+    public class MotionSensor : IMotionNotifier
+    {
+        public event Action<string, DateTime>? OnMotionDetected;
+
+        public void MotionDetected(string location, DateTime motionTime)
+        {
+            Console.WriteLine($"Ob {motionTime:HH:mm:ss} je bilo zaznano gibanje v {location}");
+            OnMotionDetected?.Invoke(location, motionTime);
+        }
+    }
+
+    public interface IMotionNotifier
+    {
+        public event Action<string, DateTime> OnMotionDetected;
+    }
+
+    public class SmartLight
+    {
+        public void TurnOnLights(string location, DateTime motionTime)
+        {
+            Console.WriteLine($"Ob {motionTime:HH:mm:ss} smo prižgali luči v {location}");
+        }
+    }
+
+    public class SecurityCamera
+    {
+        public void TurnOnCamera(string location, DateTime motionTime)
+        {
+            Console.WriteLine($"Ob {motionTime:HH:mm:ss} smo prižgali kamero v {location}");
+        }
+    }
+
+    public class MobileApp
+    {
+        public void SendSMS(string location, DateTime motionTime)
+        {
+            Console.WriteLine($"Ob {motionTime:HH:mm:ss} smo poslali SMS da je bilo zaznano gibanje v {location}");
+        }
+    }
 
     #endregion
 }
