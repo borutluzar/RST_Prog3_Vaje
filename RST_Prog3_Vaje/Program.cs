@@ -216,6 +216,38 @@
                         }
                     }
                     break;
+
+                case Tutorial.Tutorial_13:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_13.Exercises>())
+                        {
+                            case Tutorials_13.Exercises.Exercise_1524:
+                                {
+                                    Tutorials_13.Exercise_1524();
+                                }
+                                break;
+
+                            case Tutorials_13.Exercises.Exercise_1634:
+                                {
+                                    Tutorials_13.Exercise_1634();
+                                }
+                                break;
+                        }
+                    }
+                    break;
+
+                case Tutorial.Tutorial_14:
+                    {
+                        switch (InterfaceFunctions.ChooseOption<Tutorials_14.Exercises>())
+                        {
+                            case Tutorials_14.Exercises.Exercise_1724:
+                                {
+                                    Tutorials_14.Exercise_1724();
+                                }
+                                break;
+                        }
+                    }
+                    break;
             }            
         }
     }
